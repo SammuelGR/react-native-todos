@@ -1,8 +1,11 @@
 import React, { Component } from "react";
 import { Button, StyleSheet, View } from "react-native";
+import { connect } from "react-redux";
+
+import { addTodo } from "../actions";
 import Input from "./Input";
 
-export default class TodoForm extends Component {
+class TodoForm extends Component {
   constructor(props) {
     super(props);
 
@@ -16,7 +19,7 @@ export default class TodoForm extends Component {
   }
 
   onPress() {
-    console.log(this.state.text);
+    this.props.dispatchAddTodo(this.state.text);
   }
 
   render() {
@@ -51,3 +54,10 @@ const styles = StyleSheet.create({
     flex: 4
   }
 });
+
+export default connect(
+  null,
+  {
+    dispatchAddTodo: addTodo
+  }
+)(TodoForm);
