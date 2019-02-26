@@ -19,7 +19,10 @@ class TodoForm extends React.Component {
   }
 
   onPress() {
-    this.props.dispatchAddTodo(this.state.text);
+    if (this.state.text) {
+      this.props.dispatchAddTodo(this.state.text);
+      this.setState({ text: "" });
+    }
   }
 
   render() {
@@ -28,7 +31,11 @@ class TodoForm extends React.Component {
     return (
       <View style={styles.formContainer}>
         <View style={styles.inputContainer}>
-          <Input onChangeText={text => this.onChangeText(text)} value={text} />
+          <Input
+            onPress={() => this.onPress()}
+            onChangeText={text => this.onChangeText(text)}
+            value={text}
+          />
         </View>
         <View style={styles.buttonContainer}>
           <Button onPress={() => this.onPress()} title="add" />
@@ -50,7 +57,7 @@ const styles = StyleSheet.create({
     borderBottomColor: "#ccc",
     borderBottomWidth: 1,
     justifyContent: "center",
-    marginHorizontal: 5,
+    marginRight: 5,
     flex: 4
   }
 });

@@ -13,11 +13,14 @@ export default TodoListItem;
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#c5c5c5",
-    borderBottomColor: "#000",
-    borderBottomWidth: 1
+    borderBottomColor: "#ccc",
+    borderBottomWidth: 1,
+    minHeight: 50,
+    justifyContent: "center"
   },
   txt: {
-    fontSize: 18
+    fontSize: 19,
+    paddingHorizontal: 10,
+    paddingVertical: 5
   }
 });

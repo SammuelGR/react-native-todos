@@ -1,14 +1,20 @@
 import React from "react";
 import { TextInput, StyleSheet } from "react-native";
 
-const Input = ({ onChangeText, value }) => (
-  <TextInput style={styles.input} onChangeText={onChangeText} value={value} />
+const Input = ({ onChangeText, onPress, value }) => (
+  <TextInput
+    returnKeyType="send"
+    style={styles.input}
+    onChangeText={onChangeText}
+    onSubmitEditing={onPress}
+    value={value}
+  />
 );
 
 const styles = StyleSheet.create({
   input: {
-    fontSize: 18,
-    paddingLeft: 15
+    fontSize: 15,
+    paddingLeft: 5
   }
 });
 
