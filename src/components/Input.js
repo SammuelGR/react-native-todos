@@ -7,6 +7,7 @@ const Input = ({ onChangeText, onPress, value }) => (
     style={styles.input}
     onChangeText={onChangeText}
     onSubmitEditing={onPress}
+    placeholder="Adicionar To Do..."
     value={value}
   />
 );
