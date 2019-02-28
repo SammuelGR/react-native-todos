@@ -1,12 +1,12 @@
 import React from "react";
-import { View } from "react-native";
+import { ScrollView } from "react-native";
 import { connect } from "react-redux";
 import { toggleTodo, setEditingTodo } from "../actions";
 
 import TodoListItem from "./TodoListItem";
 
 const TodoList = ({ todos, toggleTodo, setEditingTodo }) => (
-  <View>
+  <ScrollView>
     {todos.map(todo => (
       <TodoListItem
         key={todo.id}
@@ -15,7 +15,7 @@ const TodoList = ({ todos, toggleTodo, setEditingTodo }) => (
         todo={todo}
       />
     ))}
-  </View>
+  </ScrollView>
 );
 
 const mapStateToProps = state => {
