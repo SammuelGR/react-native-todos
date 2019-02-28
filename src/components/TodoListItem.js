@@ -1,9 +1,13 @@
 import React from "react";
 import { StyleSheet, Text, TouchableOpacity } from "react-native";
 
-const TodoListItem = ({ todo, onPressTodo }) => {
+const TodoListItem = ({ todo, onPressTodo, onLongPressTodo }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={onPressTodo}>
+    <TouchableOpacity
+      style={styles.container}
+      onPress={onPressTodo}
+      onLongPress={onLongPressTodo}
+    >
       <Text style={[styles.txt, todo.done ? styles.lineThrough : null]}>
         {todo.text}
       </Text>
